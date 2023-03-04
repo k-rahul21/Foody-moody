@@ -1,0 +1,42 @@
+.header {
+  display: flex;
+  margin: 10px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header > a {
+  text-decoration: none;
+}
+
+.header > a > h1 {
+  font-size: 1.3rem;
+}
+
+.nav-items  > ul {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+}
+
+.nav-items > ul > li {
+  padding: 10px;
+}
+
+.card {
+  width: 200px;
+  border: 1px solid #000;
+  padding: 10px;
+  overflow-wrap: break-word;
+}
+
+.card > img {
+  width: 100%;
+}
+
+.restraunt-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 20px;
+}
