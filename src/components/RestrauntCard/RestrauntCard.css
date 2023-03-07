@@ -1,8 +1,14 @@
 .restraunt-card {
   width: 200px;
-  border: 1px solid #EEEEEE;
+  /* border: 1px solid #EEEEEE; */
   padding: 10px;
   overflow-wrap: break-word;
+  cursor: pointer;
+}
+
+.restraunt-card:hover {
+  border: 1px solid #EEEEEE;
+  box-shadow: 1px 1px 5px #EEEEEE;
 }
 
 .restraunt-card .restraunt-card-img {
