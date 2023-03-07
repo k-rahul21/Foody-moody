@@ -29,6 +29,8 @@ async function getRestraunts() {
     });
   }
 
+  console.log("restraunts",restaurants)
+
   // conditional rendering 
   // if restaurants is empty => show page skeleton component
   // if restaurants has data => show actual ui
@@ -52,7 +54,6 @@ async function getRestraunts() {
           setSearchText(e.target.value);
         }}
       />
-      <img src="assets/search-icon.png" />
       <button className="search-btn" onClick={() =>  {
         const data = searchHandler(searchText, restaurants);
         setFilteredRestaurants(data);

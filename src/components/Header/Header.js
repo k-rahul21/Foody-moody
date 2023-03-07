@@ -1,10 +1,12 @@
 // Named Imports
 import {Title} from "../Title/Title";
+import SearchBar from "../SearchBar/SearchBar";
 
 const Header = () => {
   return (
     <div className="header">
       <Title/>
+      {/* <SearchBar/> */}
       <div className="nav-items">
         <ul>
           <li>Home</li>

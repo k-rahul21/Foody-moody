@@ -1,7 +1,7 @@
 export const Title = () => (
   <a href="/">
     <h1 className="title" key="h1">
-      Namaste React
+      Foody Moody
     </h1>
   </a>
 );
