@@ -1,6 +1,5 @@
 import RestrauntCard from "../RestrauntCard/RestrauntCard";
-import { restrauntList } from "../../constants";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const searchHandler = (searchText, restraunts) => {
   const filterData = restraunts.filter((restraunts) => restraunts.data.name.toLowerCase().includes(searchText));
@@ -9,7 +8,22 @@ const searchHandler = (searchText, restraunts) => {
 
 const Body = () => {
   const [searchText, setSearchText] = useState("");
-  const [restaurants, setRestaurants] = useState(restrauntList);
+  const [restaurants, setRestaurants] = useState([]);
+  console.log("render!!")
+
+  useEffect(() => {
+    getRestraunts();
+    console.log("calling useEffect!")
+  }, []);
+
+async function getRestraunts() {
+  await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.6298774&lng=77.1021305&page_type=DESKTOP_WEB_LISTING")
+    .then((response) => response.json())
+    .then((data) => setRestaurants(data?.data?.cards[2]?.data?.data?.cards))
+    .catch((error) => {
+      console.log(error)
+    });
+  }
 
   return (
   <>
@@ -32,9 +46,13 @@ const Body = () => {
       </button>
     </div>
     <div className="restraunt-list">
-      {restaurants.map((restaurant) => {
-        return <RestrauntCard {...restaurant.data} key={restaurant.data.id}/>
-      })}
+      {restaurants.length > 0 ? (
+         restaurants.map((restaurant) => {
+          return <RestrauntCard {...restaurant.data} key={restaurant.data.id}/>
+        })
+      ) : (
+        <>Trying to fetch your data</>
+      )}
     </div>
   </>
   )
