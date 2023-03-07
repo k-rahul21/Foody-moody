@@ -52,6 +52,7 @@ async function getRestraunts() {
           setSearchText(e.target.value);
         }}
       />
+      <img src="assets/search-icon.png" />
       <button className="search-btn" onClick={() =>  {
         const data = searchHandler(searchText, restaurants);
         setFilteredRestaurants(data);
