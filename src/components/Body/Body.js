@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
 import RestaurantCard from "../RestrauntCard/RestrauntCard";
-import PageSkeleton from "../PageSkeleton/PageSkeleton"
+import SkeletonListing from "../Skeletonlisting/SkeletonListing";
 
 
 const searchHandler = (searchText, restaurants) => {
-  console.log("from search",restaurants);
   const filterData = restaurants.filter((restaurants) => restaurants?.data?.name.toLowerCase().includes(searchText));
   return filterData;
 }
@@ -30,6 +29,7 @@ async function getRestaurants() {
   }
 
   console.log("restaurants",restaurants)
+  console.log("filtered restaurants", filteredRestaurants)
 
   // conditional rendering 
   // if restaurants is empty => show page skeleton component
@@ -38,12 +38,12 @@ async function getRestaurants() {
   // not render component (early return)
   if(!restaurants) return null;
 
-  if(filteredRestaurants?.length === 0) return <h1>No restaurant match your filter!! try with some different filter!</h1>
+  if(filteredRestaurants?.length === 0) return <SkeletonListing/>
 
   return restaurants.length === 0 ? (
-    <PageSkeleton/>
+    <SkeletonListing/>
   ) : (
-  <div className="body-container">
+  <>
     <div className="search-container">
       <input 
         type="text" 
@@ -68,10 +68,10 @@ async function getRestaurants() {
           return <RestaurantCard {...restaurant.data} key={restaurant.data.id}/>
         })
       ) : (
-        <>Trying to fetch your data</>
+        <SkeletonListing/>
       )}
     </div>
-  </div>
+  </>
   )
 }
 
