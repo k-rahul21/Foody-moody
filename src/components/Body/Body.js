@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import RestaurantCard from "../RestrauntCard/RestrauntCard";
 import SkeletonListing from "../Skeletonlisting/SkeletonListing";
-
+import SearchBar from "../../assets/img/search-icon.png";
 
 const searchHandler = (searchText, restaurants) => {
   const filterData = restaurants.filter((restaurants) => restaurants?.data?.name.toLowerCase().includes(searchText));
@@ -28,15 +28,11 @@ async function getRestaurants() {
     });
   }
 
-  console.log("restaurants",restaurants)
+  console.log("restaurants", restaurants);
   console.log("filtered restaurants", filteredRestaurants)
 
-  // conditional rendering 
-  // if restaurants is empty => show page skeleton component
-  // if restaurants has data => show actual ui
 
-  // not render component (early return)
-  if(!restaurants) return null;
+  if(!restaurants) return <div>No restaurants falls with your search text!!</div>;
 
   if(filteredRestaurants?.length === 0) return <SkeletonListing/>
 
