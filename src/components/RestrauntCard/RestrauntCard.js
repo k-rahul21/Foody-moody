@@ -1,10 +1,10 @@
 import { IMG_CDN_URL } from "../../constants";
-import './RestrauntCard.css'
+import './RestaurantCard.scss'
 
-const RestrauntCard = ({avgRating, aggregatedDiscountInfo,  name, cuisines, costForTwo, deliveryTime, cloudinaryImageId}) => {
+const RestaurantCard = ({avgRating, aggregatedDiscountInfo,  name, cuisines, costForTwo, deliveryTime, cloudinaryImageId}) => {
   return (
-    <div className="restraunt-card">
-      <img className="restraunt-card-img" src={
+    <div className="restaurant-card">
+      <img className="restaurant-card-img" src={
         IMG_CDN_URL + 
         cloudinaryImageId
       } />
@@ -29,4 +29,4 @@ const RestrauntCard = ({avgRating, aggregatedDiscountInfo,  name, cuisines, cost
   )
 }
 
-export default RestrauntCard;
+export default RestaurantCard;

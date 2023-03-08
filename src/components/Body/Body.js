@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import RestrauntCard from "../RestrauntCard/RestrauntCard";
+import RestaurantCard from "../RestrauntCard/RestrauntCard";
 import PageSkeleton from "../PageSkeleton/PageSkeleton"
 
 
-const searchHandler = (searchText, restraunts) => {
-  console.log("from search",restraunts);
-  const filterData = restraunts.filter((restraunts) => restraunts?.data?.name.toLowerCase().includes(searchText));
+const searchHandler = (searchText, restaurants) => {
+  console.log("from search",restaurants);
+  const filterData = restaurants.filter((restaurants) => restaurants?.data?.name.toLowerCase().includes(searchText));
   return filterData;
 }
 
@@ -16,11 +16,11 @@ const Body = () => {
   console.log("render!!")
 
   useEffect(() => {
-    getRestraunts();
+    getRestaurants();
     console.log("calling useEffect!")
   }, []);
 
-async function getRestraunts() {
+async function getRestaurants() {
   await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.6298774&lng=77.1021305&page_type=DESKTOP_WEB_LISTING")
     .then((response) => response.json())
     .then((data) => (setRestaurants(data?.data?.cards[2]?.data?.data?.cards), setFilteredRestaurants(data?.data?.cards[2]?.data?.data?.cards)))
@@ -29,7 +29,7 @@ async function getRestraunts() {
     });
   }
 
-  console.log("restraunts",restaurants)
+  console.log("restaurants",restaurants)
 
   // conditional rendering 
   // if restaurants is empty => show page skeleton component
@@ -43,7 +43,7 @@ async function getRestraunts() {
   return restaurants.length === 0 ? (
     <PageSkeleton/>
   ) : (
-  <>
+  <div className="body-container">
     <div className="search-container">
       <input 
         type="text" 
@@ -62,16 +62,16 @@ async function getRestraunts() {
         Search
       </button>
     </div>
-    <div className="restraunt-list">
+    <div className="restaurant-list">
       {filteredRestaurants.length > 0 ? (
          filteredRestaurants.map((restaurant) => {
-          return <RestrauntCard {...restaurant.data} key={restaurant.data.id}/>
+          return <RestaurantCard {...restaurant.data} key={restaurant.data.id}/>
         })
       ) : (
         <>Trying to fetch your data</>
       )}
     </div>
-  </>
+  </div>
   )
 }
 

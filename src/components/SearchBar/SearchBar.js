@@ -1,8 +1,8 @@
 import { useState } from "react";
 
-const searchHandler = (searchText, restraunts) => {
-  console.log("from search",restraunts);
-  const filterData = restraunts.filter((restraunts) => restraunts?.data?.name.toLowerCase().includes(searchText));
+const searchHandler = (searchText, restaurants) => {
+  console.log("from search",restaurants);
+  const filterData = restaurants.filter((restaurants) => restaurants?.data?.name.toLowerCase().includes(searchText));
   return filterData;
 }
 
