@@ -1,7 +1,9 @@
+import { Link } from "react-router-dom";
+
 export const Title = () => (
-  <a href="/">
+  <Link to="/">
     <h1 className="title" key="h1">
       Foody Moody
     </h1>
-  </a>
+  </Link>
 );

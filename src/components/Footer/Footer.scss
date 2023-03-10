@@ -5,4 +5,16 @@
   margin-top: 20px;
   padding: 20px;
   overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-section a h1 {
+  font-size: 1.3rem;
+}
+
+.border-box {
+  border: 1px solid;
+  padding: 10px 20px;
 }
