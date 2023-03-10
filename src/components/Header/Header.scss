@@ -1,0 +1,32 @@
+.header {
+  display: flex;
+  overflow: hidden;
+  background-color: #333;
+  align-items: center;
+  justify-content: space-between;
+  // position: fixed; 
+  // top: 0;
+  // width: 100%;
+  // right: 0;
+  // left: 0;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  padding: 0 10px;
+  padding: 20px;
+}
+
+.header {
+  .nav-items ul {
+    display: flex;
+    width: 200px;
+    justify-content: space-between;
+    margin-right: 20px;
+  }
+
+  .nav-items ul a {
+    color: #fff;
+  }
+
+
+}

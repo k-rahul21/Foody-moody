@@ -1,0 +1,28 @@
+.empty-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 350px;
+  margin: 100px 120px;
+}
+
+.empty-container .empty-image {
+  width: 50%;
+  max-width: 490px;
+  opacity: 0.5;
+}
+
+.empty-container-info {
+  padding: 20px;
+}
+
+.empty-container-info > p {
+  line-height: 1.5;
+}
+
+.empty-container .empty-container-info .home-btn > a {
+  color: #fff;
+  padding: 10px;
+}
