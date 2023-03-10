@@ -1,5 +1,6 @@
 // Named Imports
 import {Title} from "../Title/Title";
+import { Link } from "react-router-dom";
 import SearchBar from "../SearchBar/SearchBar";
 
 const Header = () => {
@@ -9,10 +10,14 @@ const Header = () => {
       {/* <SearchBar/> */}
       <div className="nav-items">
         <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Contact</li>
-          <li>Cart</li>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/about">About</Link></li>
+          <Link to="/">
+            <li>Contact</li>
+          </Link>
+          <Link to="/">
+            <li>Cart</li>
+          </Link>
         </ul>
       </div>
     </div>
