@@ -10,14 +10,18 @@ const Header = () => {
       {/* <SearchBar/> */}
       <div className="nav-items">
         <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/about">About</Link></li>
           <Link to="/">
+            <li>Home</li>
+          </Link>
+          <Link to="/about">
+            <li>About</li>
+          </Link>
+          <Link to="/contact">
             <li>Contact</li>
           </Link>
-          <Link to="/">
+          {/* <Link to="/"> */}
             <li>Cart</li>
-          </Link>
+          {/* </Link> */}
         </ul>
       </div>
     </div>
