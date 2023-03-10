@@ -2,6 +2,7 @@
 import {Title} from "../Title/Title";
 import { Link } from "react-router-dom";
 import SearchBar from "../SearchBar/SearchBar";
+import "./Header.scss";
 
 const Header = () => {
   return (
@@ -10,18 +11,18 @@ const Header = () => {
       {/* <SearchBar/> */}
       <div className="nav-items">
         <ul>
-          <Link to="/">
+          {/* <Link to="/">
             <li>Home</li>
-          </Link>
+          </Link> */}
           <Link to="/about">
             <li>About</li>
           </Link>
           <Link to="/contact">
             <li>Contact</li>
           </Link>
-          {/* <Link to="/"> */}
+          <Link to="/">
             <li>Cart</li>
-          {/* </Link> */}
+          </Link>
         </ul>
       </div>
     </div>

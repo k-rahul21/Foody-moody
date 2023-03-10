@@ -39,7 +39,7 @@ async function getRestaurants() {
   return restaurants.length === 0 ? (
     <SkeletonListing/>
   ) : (
-  <>
+  <div className="body-section">
     <div className="search-container">
       <input 
         type="text" 
@@ -50,7 +50,7 @@ async function getRestaurants() {
           setSearchText(e.target.value);
         }}
       />
-      <button className="search-btn" onClick={() =>  {
+      <button className="search-btn text-14" onClick={() =>  {
         const data = searchHandler(searchText, restaurants);
         setFilteredRestaurants(data);
       }}
@@ -67,7 +67,7 @@ async function getRestaurants() {
         <SkeletonListing/>
       )}
     </div>
-  </>
+  </div>
   )
 }
 
