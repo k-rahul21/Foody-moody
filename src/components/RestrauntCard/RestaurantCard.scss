@@ -9,8 +9,10 @@
   }
 
   .restaurant-card:hover {
-    border: 1px solid #EEEEEE;
-    box-shadow: 1px 1px 5px #EEEEEE;
+    // border: 1px solid #EEEEEE;
+    border: 1px solid #333;
+    // box-shadow: 1px 1px 5px #EEEEEE;
+    box-shadow: 1px 1px 5px #333;
   }
 
   .restaurant-card .restaurant-card-img {
