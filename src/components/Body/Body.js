@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import RestaurantCard from "../RestrauntCard/RestrauntCard";
 import SkeletonListing from "../Skeletonlisting/SkeletonListing";
-import SearchBar from "../../assets/img/search-icon.png";
 
 const searchHandler = (searchText, restaurants) => {
   const filterData = restaurants.filter((restaurants) => restaurants?.data?.name.toLowerCase().includes(searchText));
