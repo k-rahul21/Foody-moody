@@ -4,7 +4,7 @@ import "./ErrorPage.scss";
  
 const ErrorPage = () => {
   const err = useRouteError();
-  const {status, statusText} = err;
+  const {status} = err;
   return (
     <div className="empty-container">
       <img className="empty-image" src={emptyImage} />
