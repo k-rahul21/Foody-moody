@@ -43,7 +43,7 @@ const appRoute = createBrowserRouter([
         element: <Cart/>
       },
       {
-        path: "/restraunt/:id",
+        path: "/restraunt/:resId",
         element: <RestrauntMenu/>
       }
     ]

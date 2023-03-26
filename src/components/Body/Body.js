@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import RestaurantCard from "../RestrauntCard/RestrauntCard";
 import SkeletonListing from "../Skeletonlisting/SkeletonListing";
 
@@ -60,7 +61,11 @@ async function getRestaurants() {
     <div className="restaurant-list">
       {filteredRestaurants.length > 0 ? (
          filteredRestaurants.map((restaurant) => {
-          return <RestaurantCard {...restaurant.data} key={restaurant.data.id}/>
+          return (
+          <Link to={"/restraunt/" + restaurant.data.id}  key={restaurant.data.id}> 
+            <RestaurantCard {...restaurant.data} /> 
+          </Link>
+          )
         })
       ) : (
         <SkeletonListing/>
